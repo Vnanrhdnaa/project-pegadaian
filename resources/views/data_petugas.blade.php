@@ -21,6 +21,16 @@
         <input type="text" name="search" placeholder="cari berdasarkan nama...">
         <button type="submit" class="btn-login" style="margin-top: -1px">cari</button>
     </form>
+        <form action="{{route('sortir')}}" method="GET">
+            <select name="sort" id="sort">
+                <option selected hidden disable>sort by type</option>
+                <option value="diterima">diterima</option>
+                <option value="ditolak">ditolak</option>
+                <option value="proses">proses</option>
+            </select>
+            <button type="submit" class="btn-login">sort</button>
+        </form>
+      
     {{-- refresh balik lagi ke route data karna nanti pas di klik refresh maka bersihin riwayat pencarian sebelumnya dan balikin lagi
      nya ke halaman data nya lagi--}}
     <a href="{{route('data')}}" style="margin-left: 10px; margin-top: -2px">Refresh</a> 

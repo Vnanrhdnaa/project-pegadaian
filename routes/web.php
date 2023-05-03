@@ -23,6 +23,7 @@ Route::middleware(['isLogin', 'CekRole:petugas'])->group(function() {
     Route::get('/data/petugas', [PawnshopsController::class, 'dataPetugas'])->name('data.petugas');
     Route::get('/response/edit/{pawnshop_id}', [ResponseController::class, 'edit'])->name('response.edit');
     Route::patch('/response/update/{pawnshop_id}', [ResponseController::class, 'update'])->name('response.update');
+    Route::get('/sortir', [ResponseController::class, 'sortir'])->name('sortir');
  });
  Route::middleware(['isLogin', 'CekRole:admin,petugas'])->group(function() {
      Route::get('/logout', [PawnshopsController::class, 'logout'])->name('logout');

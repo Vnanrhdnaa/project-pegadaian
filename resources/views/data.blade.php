@@ -19,7 +19,7 @@
     <form action="" method="GET">
         @csrf 
         <input type="text" name="search" placeholder="cari berdasarkan nama...">
-        <button type="submit" class="btn-login" style="margin-top: -1px">cari</button>
+        <button type="submit" class ="btn-login" style="margin-top: -1px">cari</button>
     </form>
     <a href="{{route('data')}}" style="margin-left: 10px; margin-top: -2px">Refresh</a> 
     <a href="{{route('export-pdf')}}" style="margin-left: 10px; margin-top: -10px">Cetak PDF</a>

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Pawnshop;
 use App\Models\Response;
 use Illuminate\Http\Request;
 
@@ -65,6 +65,15 @@ class ResponseController extends Controller
         //yang bakal di compact dan dipanggil di blade nya
         $pawnshopId = $pawnshop_id;
         return view('response', compact('pawnshop', 'pawnshopId'));
+    }
+
+    public function sortir( Request $request) {
+        $select = $request->sort;
+        $pawnshops = Pawnshop::whereHas('response', function ($query) use ($select) {
+            $query->where('status', $select);
+        })->with ('response')->get();
+
+        return view('data_petugas', compact('select', 'pawnshops'));
     }
 
     /**
